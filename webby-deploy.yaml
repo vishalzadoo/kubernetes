@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zadooz
+  labels:
+    app: webby-application
+spec:
+  selector:
+    matchLabels:
+      app: webby-application
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: webby-application
+    spec:
+      containers:
+      - name: veezee
+        image: reg.alta3.com/888-sam-webby
+        ports:
+        - containerPort: 80
